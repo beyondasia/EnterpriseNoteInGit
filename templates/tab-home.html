@@ -1,0 +1,27 @@
+﻿<ion-view title="{{appName}}">
+ <ion-content class="has-header padding">
+	
+	<!-- 列表头 -->
+	<div class="item">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col">姓名</div>
+			<div class="col">员工编号</div>
+			<div class="col">联系电话</div>
+		</div>
+	</div>
+	<!-- 列表内容 -->
+	<div class="item" ng-repeat="employee in employees ">
+		<div class="row">
+			<div class="col">
+				<a href="#">
+					<img ng-src="{{employee.imageUrl}}" style="height:75px;width:75px"/>
+				</a>
+			</div>
+			<div class="col">{{employee.name}}</div>
+			<div class="col">{{employee.id}}</div>
+			<div class="col">{{employee.tel}}</div>
+		</div>
+	</div>
+	</ion-content>
+</ion-view>
