@@ -1,0 +1,41 @@
+<ion-view title="我的资料">
+    <ion-content class="has-header padding">
+        <div class="list">
+            <!-- 简要信息 -->
+            <h2>基本信息</h2>
+            <a href="#/tab/about" class="item item-thumbnail-left">
+                <img ng-src="{{employees[0].imageUrl}}" alt="{{employees[0].name}}" />
+                <h2>{{employees[0].name}}</h2>
+                <p>员工编号：{{employees[0].id}}</p>
+                <p>员工类别：{{employees[0].category}}</p>
+                <p>现任职务：{{employees[0].position}}</p>
+                <p>所在部门：{{employees[0].department}}</p>
+                <button class="icon ion-android-add-contact" ng-click="editMyData()">编辑我的资料</button>
+            </a>
+            <h2>联系方式</h2>
+            <!-- 手机 -->
+            <div class="item item-icon-left item-icon-right ">
+                <i class="icon ion-iphone" ng-click="dialPhone()"></i>
+                {{employees[0].tel}}
+                <i class="icon ion-ios7-chatbubble" ng-click="sendMessage()"></i> 
+            </div>
+            <!-- 邮箱 -->
+            <div class="item item-icon-left item-icon-right ">
+                <i class="icon ion-ios7-email" ng-click="sendEmail()"></i>
+                {{employees[0].email}}
+                <i  class="icon ion-ios7-paperplane" ng-click="sendEmail()"></i>	
+            </div>
+            <!-- 固话 -->
+            <div class="item item-icon-left item-icon-right ">
+                <i class="icon ion-ios7-person" ng-click="dialPhone()"></i>
+                {{employees[0].fixedTel}}
+                <i class="icon ion-ios7-telephone" ng-click="dialPhone()"></i>	
+            </div>
+            <h2>我的任职历史</h2>
+            <hr/>
+            <div ng-repeat="myResume in employees[0].resume">
+            	<p>{{myResume}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

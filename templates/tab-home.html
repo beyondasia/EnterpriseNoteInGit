@@ -1,0 +1,27 @@
+﻿<ion-view title="{{appName}}">
+ <ion-content has-header="true" padding="true">
+	
+	<!-- 列表头 -->
+	<div class="item">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col">姓名</div>
+			<!-- <div class="col">员工编号</div> -->
+			<div class="col">联系电话</div>
+		</div>
+	</div>
+	<!-- 列表内容 -->
+	<div class="item" ng-repeat="person in favoritePeople track by $index">
+		<div class="row">
+			<div class="col">
+				<a href="#/tab/home/{{person.id}}" >
+					<img ng-src="{{person.imageUrl}}" style="height:75px;width:75px"/>
+				</a>
+			</div>
+			<div class="col">{{person.name}}</div>
+			<!-- <div class="col">{{person.id}}</div> -->
+			<div class="col">{{person.tel}}</div>
+		</div>
+	</div>
+	</ion-content>
+</ion-view>

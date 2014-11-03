@@ -1,0 +1,31 @@
+<ion-view title="我的收藏">
+	<ion-nav-buttons side="right">
+          <button class="button button-icon icon ion-navicon" ng-click="showCheckButton()"></button>
+    </ion-nav-buttons>
+	<ion-content class="has-header padding">
+		<div class="scroll">
+			<p>您已选择了<span class="assertive" style="font-size:100%;">{{countSelectedPerson()}}</span>个联系人</p>
+			<ul class="list">
+				<li class="item item-checkbox" ng-repeat="person in favoritePeople track by $index">
+					<label class="checkbox" ng-show="checkedFlag">
+						<input type="checkbox" ng-checked="setAllChecked" ng-model="person.checked" name="setCheck">
+					</label>
+					<a class="item item-avatar" href="#/tab/collection/{{person.id}}">
+						<img ng-src="{{person.imageUrl}}">
+						<h2>{{person.name}}</h2>
+						<!-- <p>{{person.checked}}</p> -->
+					</a>					
+				</li>
+			</ul>
+            <ul class="list">
+                <div ng-show="checkedFlag" class="bar bar-light">
+                    <div class="button-bar">
+                        <a class="button icon-left ion-ios7-upload button-positive" ng-click="selectAll()">全选</a>
+                        <a class="button icon-left ion-ios7-trash button-assertive" ng-click="cancelCollection()">取消收藏</a>
+                        <a class="button icon-left ion-ios7-undo button-balanced" ng-click="showCheckButton()">取 消</a>
+                    </div>
+                </div>
+			</ul>			
+        </div>
+	</ion-content>
+</ion-view>
